@@ -1,9 +1,12 @@
 extends Node2D
 
+class_name Player
+
 @export var speed = 200
 var direction = Vector2.ZERO
 
 @onready var collision_rect: CollisionShape2D = $CollisionShape2D
+@onready var animation_player = $AnimationPlayer
 
 var bounding_size_x
 var start_bound
@@ -36,3 +39,7 @@ func _process(delta):
 	 	position.x + delta_movement > end_bound - bounding_size_x * transform.get_scale().x):
 		return
 	position.x += delta_movement
+	
+func on_player_destroyed():
+	speed = 0
+	animation_player.play("destroy")

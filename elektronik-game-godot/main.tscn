@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ox4s7wbdn4bi"]
+[gd_scene load_steps=8 format=3 uid="uid://ox4s7wbdn4bi"]
 
 [ext_resource type="PackedScene" uid="uid://cjxqqaj3uemik" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ck8t8caf55w6v" path="res://bullet_catcher.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cj3uywl4trvro" path="res://invader_spawner.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dhpi4865m28h3" path="res://ufo_spawner.tscn" id="4_1bvp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(31, 650)
@@ -54,6 +55,9 @@ rotation = 1.5707964
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
 position = Vector2(-97, -1.9999962)
 shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="UfoSpawner" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(533, -297)
 
 [connection signal="area_entered" from="Walls/LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="Walls/RightWall" to="InvaderSpawner" method="_on_right_wall_area_entered"]

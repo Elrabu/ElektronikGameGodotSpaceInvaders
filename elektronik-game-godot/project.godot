@@ -41,3 +41,4 @@ shoot={
 2d_physics/layer_4="invader_projectile"
 2d_physics/layer_5="bunker"
 2d_physics/layer_6="wall"
+2d_physics/layer_7="ufo"

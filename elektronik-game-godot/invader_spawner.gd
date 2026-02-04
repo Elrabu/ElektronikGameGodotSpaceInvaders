@@ -13,15 +13,17 @@ const INVADERS_POSITION_Y_INCREMENT = 20
 
 var movement_direction = 1
 var invader_scene = preload("res://invader.tscn")
+var invader_shot_scene = preload("res://invader_shot.tscn")
 
 # NODE REFERENCES
 @onready var movement_timer = $MovementTimer
+@onready var shot_timer = $ShotTimer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	movement_timer.timeout.connect(move_invaders)
-	
+	shot_timer.timeout.connect(on_invader_shot)
 	
 	var invader_1_res = preload("res://Resources/invader_1.tres")
 	var invader_2_res = preload("res://Resources/invader_2.tres")
@@ -70,3 +72,10 @@ func _on_right_wall_area_entered(area):
 	if(movement_direction == 1):
 		position.y += INVADERS_POSITION_Y_INCREMENT
 		movement_direction *= -1
+		
+func on_invader_shot():
+	var random_child_position = get_children().filter(func (child ): return child is Invader).map(func (invader): return invader.global_position).pick_random()
+	
+	var invader_shot = invader_shot_scene.instantiate() as InvaderShot
+	invader_shot.global_position = random_child_position
+	get_tree().root.add_child(invader_shot)
