@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Invader
 
+signal on_invader_destroyed(points: int)
+
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
@@ -20,4 +22,5 @@ func _on_area_entered(area):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "destroy":
 		queue_free()
+		on_invader_destroyed.emit(config.points)
 	
