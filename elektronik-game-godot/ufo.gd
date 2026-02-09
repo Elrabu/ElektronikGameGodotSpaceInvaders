@@ -3,6 +3,7 @@ extends Area2D
 class_name Ufo
 
 @export var speed = 200
+@export var destroyed = false
 @onready var sprite_2d = $Sprite2D
 
 @onready var shooting_point = $ShootingPoint
@@ -17,9 +18,11 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_area_entered(area):
-	if area is Laser:
-		shooting_point.queue_free()
-		speed = 0
-		sprite_2d.texture = explosion_texture
-		await get_tree().create_timer(1.5).timeout
-		queue_free()
+	if (destroyed == false):
+		if area is Laser:
+			destroyed = true
+			shooting_point.queue_free()
+			speed = 0
+			sprite_2d.texture = explosion_texture
+			await get_tree().create_timer(1.5).timeout
+			queue_free()

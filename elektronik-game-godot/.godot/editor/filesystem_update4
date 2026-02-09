@@ -1,11 +1,2 @@
-res://bunker.tscn
-res://main.tscn
-res://life_manager.gd
-res://player.gd
 res://player.tscn
-res://points_counter.gd
-res://invader.gd
-res://invader_spawner.tscn
-res://invader_spawner.gd
-res://ui.tscn
-res://ui.gd
+res://shooting.gd
