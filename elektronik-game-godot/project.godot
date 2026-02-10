@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ElektronikGameGodot"
-run/main_scene="uid://ox4s7wbdn4bi"
+run/main_scene="uid://buu648mj3d1rc"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -42,3 +42,7 @@ shoot={
 2d_physics/layer_5="bunker"
 2d_physics/layer_6="wall"
 2d_physics/layer_7="ufo"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
