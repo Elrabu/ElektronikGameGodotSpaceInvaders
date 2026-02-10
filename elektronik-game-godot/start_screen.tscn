@@ -57,47 +57,68 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 48
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="InvaderContainer_1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 25
+columns = 2
 
-[node name="Invader1Texture" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/InvaderContainer_1"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Invader1Texture" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/Control"]
 unique_name_in_owner = true
 texture_filter = 1
 clip_contents = true
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_pevhg")
+expand_mode = 1
 
-[node name="Invader1Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/InvaderContainer_1"]
+[node name="Invader1Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0.87, 0.07249993, 1)
 theme_override_fonts/font = ExtResource("1_ncxyx")
 theme_override_font_sizes/font_size = 40
-text = "= 10 POINTS"
-horizontal_alignment = 1
+text = "=  10 POINTS"
 vertical_alignment = 1
 
-[node name="InvaderContainer_2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Invader2Texture" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/InvaderContainer_2"]
+[node name="Invader2Texture" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/Control2"]
 unique_name_in_owner = true
 texture_filter = 1
 clip_contents = true
 custom_minimum_size = Vector2(80, 60)
-layout_mode = 2
+layout_mode = 0
+offset_left = 1.0
+offset_top = -37.0
+offset_right = 81.0
+offset_bottom = 23.0
 texture = ExtResource("3_afy8x")
+expand_mode = 1
 
-[node name="Invader2Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/InvaderContainer_2"]
+[node name="Invader2Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.87, 0.07249993, 1)
@@ -107,22 +128,27 @@ text = "= 20 POINTS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InvaderContainer_3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Invader3Texture" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/InvaderContainer_3"]
+[node name="Invader3Texture" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/Control3"]
 unique_name_in_owner = true
 texture_filter = 1
 clip_contents = true
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
+offset_left = 11.0
+offset_top = -41.0
+offset_right = 71.0
+offset_bottom = 19.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("4_k1na2")
+expand_mode = 1
 
-[node name="Invader3Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/InvaderContainer_3"]
+[node name="Invader3Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.87058824, 0.07058824, 1)
@@ -150,7 +176,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_l67vj")
 text = "PLAY SPACE INVADERS"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.75
 autostart = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="load_game"]
