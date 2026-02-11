@@ -22,6 +22,13 @@ var invader_shot_scene = preload("res://invader_shot.tscn")
 var invader_total_count = ROWS * COLUMNS
 var invader_destroyed_count = 0
 
+@export var base_move_interval := 0.8      # starting speed (slow)
+@export var speedup_per_kill := 0.015         # how much faster per invader
+@export var min_move_interval := 0.08         # max speed cap
+var sound_index := 0
+#Audio Array
+var fastinvader_sounds: Array[AudioStreamPlayer2D]
+
 # NODE REFERENCES
 @onready var movement_timer = $MovementTimer
 @onready var shot_timer = $ShotTimer
@@ -37,6 +44,16 @@ var invader_destroyed_count = 0
 func _ready():
 	movement_timer.timeout.connect(move_invaders)
 	shot_timer.timeout.connect(on_invader_shot)
+	
+	fastinvader_sounds = [
+		fastinvader_1,
+		fastinvader_2,
+		fastinvader_3,
+		fastinvader_4
+	]
+	
+	movement_timer.wait_time = base_move_interval
+	movement_timer.start()
 	
 	var invader_1_res = preload("res://Resources/invader_1.tres")
 	var invader_2_res = preload("res://Resources/invader_2.tres")
@@ -73,6 +90,9 @@ func spawn_invader(invader_config, spawn_position:Vector2):
 
 func move_invaders():
 	position.x += INVADERS_POSITION_X_INCREMENT * movement_direction
+
+	fastinvader_sounds[sound_index].play()
+	sound_index = (sound_index + 1) % fastinvader_sounds.size()
 	
 
 
@@ -98,6 +118,10 @@ func on_invader_destroyed(points: int):
 	invader_boom.play()
 	invader_destroyed.emit(points)
 	invader_destroyed_count += 1
+
+	var new_time = base_move_interval - (invader_destroyed_count * speedup_per_kill) #accelerate game
+	movement_timer.wait_time = max(new_time, min_move_interval)
+
 	if invader_destroyed_count == invader_total_count:
 		game_won.emit()
 		shot_timer.stop()
