@@ -9,6 +9,7 @@ var direction = Vector2.ZERO
 
 @onready var collision_rect: CollisionShape2D = $CollisionShape2D
 @onready var animation_player = $AnimationPlayer
+@onready var explosion = %explosion
 
 var bounding_size_x
 var start_bound
@@ -43,6 +44,7 @@ func _process(delta):
 	position.x += delta_movement
 	
 func on_player_destroyed():
+	explosion.play()
 	speed = 0
 	animation_player.play("destroy")
 

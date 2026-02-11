@@ -1,7 +1,7 @@
+AudioStreamPlayer2D
 Control
 GridContainer
 VBoxContainer
-AudioStreamPlayer2D
 Timer
 VisibleOnScreenNotifier2D
 HBoxContainer

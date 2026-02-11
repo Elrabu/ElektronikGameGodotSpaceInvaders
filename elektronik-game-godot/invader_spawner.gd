@@ -25,6 +25,12 @@ var invader_destroyed_count = 0
 # NODE REFERENCES
 @onready var movement_timer = $MovementTimer
 @onready var shot_timer = $ShotTimer
+@onready var invader_boom = $invader_boom
+@onready var fastinvader_1 = $fastinvader1
+@onready var fastinvader_2 = $fastinvader2
+@onready var fastinvader_3 = $fastinvader3
+@onready var fastinvader_4 = $fastinvader4
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -89,6 +95,7 @@ func on_invader_shot():
 	get_tree().root.add_child(invader_shot)
 
 func on_invader_destroyed(points: int):
+	invader_boom.play()
 	invader_destroyed.emit(points)
 	invader_destroyed_count += 1
 	if invader_destroyed_count == invader_total_count:

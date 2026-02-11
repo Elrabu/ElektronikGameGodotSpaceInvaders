@@ -7,6 +7,7 @@
 script = ExtResource("1_5h7n1")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
 script = ExtResource("1_hc5cc")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
