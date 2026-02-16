@@ -1,2 +1,2 @@
 # ElektronikGameGodotSpaceInvaders
-Space Invaders in Unity
+Space Invaders in Godot
