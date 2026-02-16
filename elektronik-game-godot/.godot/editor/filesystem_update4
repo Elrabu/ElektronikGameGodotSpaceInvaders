@@ -1,1 +1,5 @@
 res://main.tscn
+res://shooting.gd
+res://player.gd
+res://start_screen.tscn
+res://start_screen.gd

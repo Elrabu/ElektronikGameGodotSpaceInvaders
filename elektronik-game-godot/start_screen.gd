@@ -10,9 +10,17 @@ extends CanvasLayer
 @onready var timer = $Timer
 
 var control_array = []
+var controller: Controller
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var controller_host = get_tree().get_current_scene().get_node("ControllerHost")
+
+	if controller_host:
+		controller = controller_host.controller
+	else:
+		push_error("ControllerHost not found in the current scene!")
+
 	control_array = [
 		[invader_1_texture, invader_1_label],
 		[invader_2_texture, invader_2_label],
@@ -24,9 +32,10 @@ func _ready():
 		for control in entry:
 			(control as Control).visible = false
 
-func load_game():
-	get_tree().change_scene_to_file("res://main.tscn")
-
+func _physics_process(delta):
+	if controller and controller.get_buttons() == 1:
+		get_tree().change_scene_to_file("res://main.tscn")
+	
 func show_next_control():
 	if control_array.is_empty():
 		timer.stop()

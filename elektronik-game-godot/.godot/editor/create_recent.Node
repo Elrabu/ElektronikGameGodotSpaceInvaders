@@ -1,3 +1,4 @@
+Node
 AudioStreamPlayer2D
 Control
 GridContainer
@@ -11,4 +12,3 @@ TextureRect
 MarginContainer
 CanvasLayer
 CenterContainer
-Node
