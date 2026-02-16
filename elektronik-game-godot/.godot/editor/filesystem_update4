@@ -1,9 +1,1 @@
 res://main.tscn
-res://shooting.gd
-res://ufo.tscn
-res://ufo_spawner.tscn
-res://spawn_timer.gd
-res://player.gd
-res://player.tscn
-res://invader_spawner.gd
-res://invader_spawner.tscn

@@ -36,7 +36,7 @@ func on_game_lost():
 	game_over_container.visible = true
 	
 func on_game_won():
-	game_over_label.text = "You won!"
+	game_over_label.text = "You win!"
 	game_over_label.add_theme_color_override("font_color", Color.GREEN)
 	game_over_container.visible = true
 

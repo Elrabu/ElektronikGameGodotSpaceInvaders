@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ElektronikGameGodot"
+config/name="SpaceInvaders"
 run/main_scene="uid://buu648mj3d1rc"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
@@ -45,4 +45,6 @@ shoot={
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
