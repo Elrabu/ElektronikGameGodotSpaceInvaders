@@ -42,10 +42,12 @@ func points_increased(points: int):
 	points_label.text = "SCORE: %d" % points
 
 func on_game_lost():
+	invader_spawner.visible = false
 	game_over_container.visible = true
 	game_over = true
 	
 func on_game_won():
+	invader_spawner.visible = false
 	game_over_label.text = "You win!"
 	game_over_label.add_theme_color_override("font_color", Color.GREEN)
 	game_over_container.visible = true

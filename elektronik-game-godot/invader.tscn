@@ -102,6 +102,7 @@ _data = {
 }
 
 [node name="Invader" type="Area2D"]
+scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 34
 script = ExtResource("1_ctdqs")

@@ -17,6 +17,7 @@ var start_bound
 var end_bound
 
 func _ready():
+	position.y = 486
 	bounding_size_x = collision_rect.shape.get_rect().size.x
 	
 	var rect = get_viewport().get_visible_rect()

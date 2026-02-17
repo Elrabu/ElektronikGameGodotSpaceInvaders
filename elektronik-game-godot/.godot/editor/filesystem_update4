@@ -1,8 +1,14 @@
 res://start_screen.tscn
 res://main.tscn
-res://start_screen.gd
-res://shooting.gd
-res://player.gd
+res://bullet_catcher.tscn
+res://bunker.tscn
 res://player.tscn
+res://laser.tscn
+res://invader_shot.tscn
+res://ufo.tscn
+res://invader_spawner.gd
+res://invader.tscn
+res://invader_spawner.tscn
 res://ui.tscn
+res://player.gd
 res://ui.gd

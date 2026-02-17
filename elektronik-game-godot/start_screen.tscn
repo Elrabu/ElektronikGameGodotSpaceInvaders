@@ -52,7 +52,7 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0.87, 0.07249993, 1)
 theme_override_fonts/font = ExtResource("1_ncxyx")
 theme_override_font_sizes/font_size = 108
-text = "SPACE
+text = "SPACE 
 INVADERS"
 horizontal_alignment = 1
 vertical_alignment = 1
