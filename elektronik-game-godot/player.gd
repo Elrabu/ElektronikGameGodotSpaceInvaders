@@ -25,7 +25,7 @@ func _ready():
 	start_bound = (camera_position.x - rect.size.x) / 2
 	end_bound = (camera_position.x + rect.size.x) / 2
 	
-	var controller_host = get_tree().get_current_scene().get_node("ControllerHost")
+	var controller_host = get_tree().get_current_scene().get_node("Controller")
 
 	if controller_host:
 		controller = controller_host.controller

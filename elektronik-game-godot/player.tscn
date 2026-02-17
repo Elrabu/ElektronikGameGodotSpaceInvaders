@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjxqqaj3uemik"]
+[gd_scene load_steps=15 format=3 uid="uid://cjxqqaj3uemik"]
 
 [ext_resource type="Script" uid="uid://bu8rskfycmbkq" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dt0af4o7yh41a" path="res://Assets/Player/Player.png" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://inptt1mtub5m" path="res://ControllerHost.gd" id="2_n7ghd"]
 [ext_resource type="Script" uid="uid://delgxola6p7ye" path="res://shooting.gd" id="3_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://dy8um87ndyh8b" path="res://laser.tscn" id="4_hqtel"]
 [ext_resource type="Texture2D" uid="uid://bi2vdab3slwgf" path="res://Assets/Player/Player-explosion1.png" id="5_1jxqw"]
@@ -53,6 +54,9 @@ _data = {
 [node name="Player" type="Area2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_onrkg")
+
+[node name="Controller" type="Node" parent="."]
+script = ExtResource("2_n7ghd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

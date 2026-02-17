@@ -14,7 +14,7 @@ var controller: Controller
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var controller_host = get_tree().get_current_scene().get_node("ControllerHost")
+	var controller_host = get_tree().get_current_scene().get_node("Controller")
 
 	if controller_host:
 		controller = controller_host.controller

@@ -11,9 +11,18 @@ var life_texture = preload("res://Assets/Player/Player.png")
 @onready var game_over_label = %GameOverLabel
 @onready var game_over_button = %GameOverButton
 @onready var game_over_container = $MarginContainer/GameOverContainer
-
+var controller: Controller
+var game_over = false
+var game_won = false
 
 func _ready():
+	var controller_host = get_tree().get_current_scene().get_node("Controller")
+
+	if controller_host:
+		controller = controller_host.controller
+	else:
+		push_error("ControllerHost not found in the current scene!")
+
 	points_label.text = "SCORE: %d" % 0
 	points_counter.on_points_increased.connect(points_increased)
 	invader_spawner.game_lost.connect(on_game_lost)
@@ -34,11 +43,18 @@ func points_increased(points: int):
 
 func on_game_lost():
 	game_over_container.visible = true
+	game_over = true
 	
 func on_game_won():
 	game_over_label.text = "You win!"
 	game_over_label.add_theme_color_override("font_color", Color.GREEN)
 	game_over_container.visible = true
+	game_won = true
+
+func _physics_process(delta):
+	if controller and controller.get_buttons() == 1:
+		if game_over == true or game_won == true:
+			get_tree().reload_current_scene()
 
 func on_restart_button_pressed():
 	get_tree().reload_current_scene()

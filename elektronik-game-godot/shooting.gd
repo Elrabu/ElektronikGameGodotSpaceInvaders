@@ -7,7 +7,7 @@ var can_player_shoot = true
 var controller: Controller
 
 func _ready():
-	var controller_host = get_tree().get_current_scene().get_node("ControllerHost")
+	var controller_host = get_tree().get_current_scene().get_node("Controller")
 
 	if controller_host:
 		controller = controller_host.controller
@@ -15,7 +15,7 @@ func _ready():
 		push_error("ControllerHost not found in the current scene!")
 
 func _physics_process(delta):
-	if controller and controller.get_buttons() == 1 && can_player_shoot:
+	if controller and controller.get_buttons(): #== 1 && can_player_shoot:
 		shoot.play()
 		can_player_shoot = false
 		var laser = laser_scene.instantiate() as Laser
