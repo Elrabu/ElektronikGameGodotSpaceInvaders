@@ -54,7 +54,7 @@ func on_game_won():
 	game_won = true
 
 func _physics_process(delta):
-	if controller and controller.get_buttons() == 1:
+	if controller and controller.get_buttons() == 2:
 		if game_over == true or game_won == true:
 			get_tree().reload_current_scene()
 
