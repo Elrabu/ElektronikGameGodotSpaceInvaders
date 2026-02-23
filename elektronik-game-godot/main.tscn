@@ -25,15 +25,15 @@ size = Vector2(65, 1922)
 script = ExtResource("1_kek77")
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(2, 486)
+position = Vector2(0, 400)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="BulletCatcher" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(7, -514)
+position = Vector2(-6, -576)
 
 [node name="InvaderSpawner" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(-2, -334)
+position = Vector2(-2, -403)
 
 [node name="Walls" type="Node" parent="."]
 
@@ -62,26 +62,26 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
-position = Vector2(155, 1.9999933)
+position = Vector2(69, -1.0000029)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="UfoSpawner" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(774, -436)
+position = Vector2(769, -496)
 
 [node name="Bunker" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(-643, 349)
+position = Vector2(-643, 239)
 scale = Vector2(4, 4)
 
 [node name="Bunker2" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(-226, 349)
+position = Vector2(-226, 239)
 scale = Vector2(4, 4)
 
 [node name="Bunker3" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(226, 349)
+position = Vector2(226, 239)
 scale = Vector2(4, 4)
 
 [node name="Bunker4" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(630, 349)
+position = Vector2(630, 239)
 scale = Vector2(4, 4)
 
 [node name="LifeManager" type="Node" parent="."]
