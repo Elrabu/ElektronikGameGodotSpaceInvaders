@@ -96,13 +96,13 @@ func move_invaders():
 	
 
 
-func _on_left_wall_area_entered(area):
+func _on_left_wall_area_entered(_area):
 	if(movement_direction == -1):
 		position.y += INVADERS_POSITION_Y_INCREMENT 
 		movement_direction *= -1
 
 
-func _on_right_wall_area_entered(area):
+func _on_right_wall_area_entered(_area):
 	if(movement_direction == 1):
 		position.y += INVADERS_POSITION_Y_INCREMENT
 		movement_direction *= -1
@@ -129,6 +129,6 @@ func on_invader_destroyed(points: int):
 	
 
 
-func _on_bottom_wall_area_entered(area):
+func _on_bottom_wall_area_entered(_area):
 	movement_direction = 0
 	game_lost.emit()

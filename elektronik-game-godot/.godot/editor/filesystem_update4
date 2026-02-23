@@ -1,7 +1,5 @@
 res://main.tscn
-res://start_screen.gd
-res://pause_menu.tscn
-res://pause_menu.gd
-res://bunker.tscn
-res://player.gd
+res://ControllerHost.gd
 res://shooting.gd
+res://invader_spawner.gd
+res://ui.gd
