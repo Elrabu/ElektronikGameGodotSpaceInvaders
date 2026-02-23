@@ -32,7 +32,7 @@ func _ready():
 		for control in entry:
 			(control as Control).visible = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if controller and controller.get_buttons() == 2:
 		get_tree().change_scene_to_file("res://main.tscn")
 	

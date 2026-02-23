@@ -1,6 +1,7 @@
 res://main.tscn
-res://start_screen.tscn
-res://ui.tscn
-res://player.tscn
+res://start_screen.gd
+res://pause_menu.tscn
+res://pause_menu.gd
+res://bunker.tscn
 res://player.gd
 res://shooting.gd
