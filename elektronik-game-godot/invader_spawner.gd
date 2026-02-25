@@ -38,10 +38,19 @@ var fastinvader_sounds: Array[AudioStreamPlayer2D]
 @onready var fastinvader_3 = $fastinvader3
 @onready var fastinvader_4 = $fastinvader4
 
+var display: Display
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var display_host = get_tree().get_current_scene().get_node("DisplayHost")
+	
+	if display_host:
+		display = display_host.display
+	else:
+		push_error("DisplayHost not found in the current scene!")
+
+
 	movement_timer.timeout.connect(move_invaders)
 	shot_timer.timeout.connect(on_invader_shot)
 	
@@ -115,9 +124,12 @@ func on_invader_shot():
 	get_tree().root.add_child(invader_shot)
 
 func on_invader_destroyed(points: int):
+	display.show_text("+ " + str(points))
 	invader_boom.play()
 	invader_destroyed.emit(points)
 	invader_destroyed_count += 1
+	await get_tree().create_timer(2.0).timeout
+	display.clear()
 
 	var new_time = base_move_interval - (invader_destroyed_count * speedup_per_kill) #accelerate game
 	movement_timer.wait_time = max(new_time, min_move_interval)

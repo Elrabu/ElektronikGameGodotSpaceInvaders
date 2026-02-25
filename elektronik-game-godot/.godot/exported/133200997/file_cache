@@ -7,7 +7,7 @@ res://invader.tscn::e14794377f23d09260bb9b2e6b24716b::1771346580::res://.godot/e
 res://invader_shot.tscn::e6636566d18b45d2e6b10bbda45c5223::1771346165::res://.godot/exported/133200997/export-ac249899a45751ca532d6712b913cb69-invader_shot.scn
 res://invader_spawner.tscn::f87a061a62e76e4a8bdc391c99a74b6b::1771346639::res://.godot/exported/133200997/export-727059f1671c54f484b6647fc46e669d-invader_spawner.scn
 res://laser.tscn::05c4d3564f249f312640ec838b67d55b::1771346155::res://.godot/exported/133200997/export-b21fafe43ac97fc1dd338bca39523f0b-laser.scn
-res://main.tscn::dfee3533627d594d94d9751246bd7654::1772041405::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://main.tscn::dfee3533627d594d94d9751246bd7654::1772045471::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
 res://pause_menu.tscn::3af88230727395195385323bf11d5999::1771871820::res://.godot/exported/133200997/export-8f8844d4375fca029c0f20cf6f905ea1-pause_menu.scn
 res://player.tscn::1f8f7bb8246af85fc553bc7acbb50a6a::1771847094::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
 res://start_screen.tscn::b3c83f19ed7edd82027b34f62a4ebc6b::1771846793::res://.godot/exported/133200997/export-7629d1afc167605ccc7fe34222f7c5a4-start_screen.scn

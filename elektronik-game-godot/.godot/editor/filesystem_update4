@@ -4,3 +4,6 @@ res://ControllerHost.gd
 res://display_host.gd
 res://shooting.gd
 res://start_screen.gd
+res://start_screen.tscn
+res://invader.gd
+res://invader_spawner.gd

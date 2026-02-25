@@ -13,8 +13,10 @@ const BTN_START = 0b01000000  # Bit 6
 signal player_destroyed
 
 var controller: Controller
+var display: Display
 @export var speed = 200
 var direction = Vector2.ZERO
+
 
 @onready var collision_rect: CollisionShape2D = $CollisionShape2D
 @onready var animation_player = $AnimationPlayer
@@ -40,11 +42,19 @@ func _ready():
 	end_bound = (camera_position.x + rect.size.x) / 2
 	
 	var controller_host = get_tree().get_current_scene().get_node("Controller")
+	var display_host = get_tree().get_current_scene().get_node("DisplayHost")
 
 	if controller_host:
 		controller = controller_host.controller
 	else:
 		push_error("ControllerHost not found in the current scene!")
+		
+	if display_host:
+		display = display_host.display
+	else:
+		push_error("DisplayHost not found in the current scene!")
+	
+	
 
 func _physics_process(delta):
 	if controller:
@@ -64,7 +74,7 @@ func _physics_process(delta):
 		if abs(move_x) < 0.05:
 			move_x = 0.0
 
-		var delta_movement = speed * delta * move_x
+		var delta_movement = speed * delta * (move_x * -1)
 		
 		if (position.x + delta_movement < start_bound + bounding_size_x * transform.get_scale().x ||
 		 	position.x + delta_movement > end_bound - bounding_size_x * transform.get_scale().x):
@@ -72,9 +82,12 @@ func _physics_process(delta):
 		position.x += delta_movement
 	
 func on_player_destroyed():
+	display.show_text("Don't get hit!")
 	explosion.play()
 	speed = 0
 	animation_player.play("destroy")
+	await get_tree().create_timer(2.0).timeout
+	display.clear()
 
 
 func _on_animation_player_animation_finished(anim_name):

@@ -17,7 +17,7 @@ func _ready():
 	if display.connect_display(port):
 		print("Display connected successfully!")
 		display.set_brightness(0)
-		display.show_text("Vector Descent")
+		display.show_text("Space Invaders")
 	else:
 		push_error("Failed to connect display on port: " + port)
 

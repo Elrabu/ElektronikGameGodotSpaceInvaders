@@ -5,6 +5,7 @@ extends Node2D
 
 var can_player_shoot = true
 var controller: Controller
+var display: Display
 
 func _ready():
 	var controller_host = get_tree().get_current_scene().get_node("Controller")
