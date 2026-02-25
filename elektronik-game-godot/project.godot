@@ -15,6 +15,10 @@ run/main_scene="uid://buu648mj3d1rc"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SerialConfig="*res://SerialConfig.gd"
+
 [display]
 
 window/size/viewport_width=1920

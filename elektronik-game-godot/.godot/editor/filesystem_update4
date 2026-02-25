@@ -1,5 +1,6 @@
 res://main.tscn
+res://player.gd
 res://ControllerHost.gd
+res://display_host.gd
 res://shooting.gd
-res://invader_spawner.gd
-res://ui.gd
+res://start_screen.gd

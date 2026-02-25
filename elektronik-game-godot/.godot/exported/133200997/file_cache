@@ -1,0 +1,16 @@
+res://Resources/invader_1.tres::fbf324d2882f2d14fcd8f8cf2481036d::1770027849::res://.godot/exported/133200997/export-ebe957dd2ab5b3c0683a65147079e157-invader_1.res
+res://Resources/invader_2.tres::37524977f9cde8a1113f752717c555fa::1770027849::res://.godot/exported/133200997/export-2311a4f5b9b8abca1fe730730117d686-invader_2.res
+res://Resources/invader_3.tres::9bb3fa2c9bc88ad5a3ec8cd7686ec32e::1770027849::res://.godot/exported/133200997/export-7b63a63347469ce2420c0d60fdb27a84-invader_3.res
+res://bullet_catcher.tscn::1f90502c08297017fbb54675a6cc3787::1771345920::res://.godot/exported/133200997/export-6c554795828b8685fb9a1dcfdc8f3049-bullet_catcher.scn
+res://bunker.tscn::34bc4243be51e05b95d9b5130023773a::1771345998::res://.godot/exported/133200997/export-873bad3ff55ec85c0c93f32b16ad0be0-bunker.scn
+res://invader.tscn::e14794377f23d09260bb9b2e6b24716b::1771346580::res://.godot/exported/133200997/export-c0c511ae0de8e82a1dd8f36b33ec34b4-invader.scn
+res://invader_shot.tscn::e6636566d18b45d2e6b10bbda45c5223::1771346165::res://.godot/exported/133200997/export-ac249899a45751ca532d6712b913cb69-invader_shot.scn
+res://invader_spawner.tscn::f87a061a62e76e4a8bdc391c99a74b6b::1771346639::res://.godot/exported/133200997/export-727059f1671c54f484b6647fc46e669d-invader_spawner.scn
+res://laser.tscn::05c4d3564f249f312640ec838b67d55b::1771346155::res://.godot/exported/133200997/export-b21fafe43ac97fc1dd338bca39523f0b-laser.scn
+res://main.tscn::dfee3533627d594d94d9751246bd7654::1772041405::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://pause_menu.tscn::3af88230727395195385323bf11d5999::1771871820::res://.godot/exported/133200997/export-8f8844d4375fca029c0f20cf6f905ea1-pause_menu.scn
+res://player.tscn::1f8f7bb8246af85fc553bc7acbb50a6a::1771847094::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
+res://start_screen.tscn::b3c83f19ed7edd82027b34f62a4ebc6b::1771846793::res://.godot/exported/133200997/export-7629d1afc167605ccc7fe34222f7c5a4-start_screen.scn
+res://ufo.tscn::d95b1dee746327d2af1415f280fdeaab::1771346210::res://.godot/exported/133200997/export-8a04662b46abb71ed7f63ad00f37896f-ufo.scn
+res://ufo_spawner.tscn::feb697af76bb9ac972251bfa16676aa1::1770818803::res://.godot/exported/133200997/export-b4f6a0b877dc195d073794067da231c8-ufo_spawner.scn
+res://ui.tscn::47edca2b4910198b724faa8343f8faf1::1771846777::res://.godot/exported/133200997/export-5d2f649bfda0e984c5f95c948cc9f360-ui.scn
