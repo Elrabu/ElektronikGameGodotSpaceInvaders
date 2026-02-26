@@ -7,6 +7,14 @@ var can_player_shoot = true
 var controller: Controller
 var display: Display
 
+const BTN_A     = 0b00000001  # Bit 0
+const BTN_B     = 0b00000010  # Bit 1
+const BTN_X     = 0b00000100  # Bit 2
+const BTN_Y     = 0b00001000  # Bit 3
+const BTN_LB    = 0b00010000  # Bit 4
+const BTN_RB    = 0b00100000  # Bit 5
+const BTN_START = 0b01000000  # Bit 6
+
 func _ready():
 	var controller_host = get_tree().get_current_scene().get_node("Controller")
 
@@ -16,7 +24,8 @@ func _ready():
 		push_error("ControllerHost not found in the current scene!")
 
 func _physics_process(_delta):
-	if controller and controller.get_buttons() == 4 && can_player_shoot:
+	var buttons = controller.get_buttons()
+	if controller and (buttons & BTN_X) != 0 && can_player_shoot:
 		shoot.play()
 		can_player_shoot = false
 		var laser = laser_scene.instantiate() as Laser

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qxgprgnqvbma" path="res://bullet_catcher.gd" id="1_j1neg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(2038, 60)
+size = Vector2(3059, 60)
 
 [node name="BulletCatcher" type="Area2D"]
 position = Vector2(-4, 0)
@@ -11,7 +11,7 @@ collision_mask = 2
 script = ExtResource("1_j1neg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 2)
+position = Vector2(4.5, 2)
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

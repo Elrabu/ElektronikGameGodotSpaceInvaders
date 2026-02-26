@@ -15,6 +15,14 @@ var controller: Controller
 var game_over = false
 var game_won = false
 
+const BTN_A     = 0b00000001  # Bit 0
+const BTN_B     = 0b00000010  # Bit 1
+const BTN_X     = 0b00000100  # Bit 2
+const BTN_Y     = 0b00001000  # Bit 3
+const BTN_LB    = 0b00010000  # Bit 4
+const BTN_RB    = 0b00100000  # Bit 5
+const BTN_START = 0b01000000  # Bit 6
+
 func _ready():
 	var controller_host = get_tree().get_current_scene().get_node("Controller")
 
@@ -54,7 +62,8 @@ func on_game_won():
 	game_won = true
 
 func _physics_process(_delta):
-	if controller and controller.get_buttons() == 2:
+	var buttons = controller.get_buttons()
+	if controller and (buttons & BTN_A) != 0:
 		if game_over == true or game_won == true:
 			get_tree().reload_current_scene()
 

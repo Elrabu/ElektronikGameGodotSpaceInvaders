@@ -12,6 +12,14 @@ extends CanvasLayer
 var control_array = []
 var controller: Controller
 
+const BTN_A     = 0b00000001  # Bit 0
+const BTN_B     = 0b00000010  # Bit 1
+const BTN_X     = 0b00000100  # Bit 2
+const BTN_Y     = 0b00001000  # Bit 3
+const BTN_LB    = 0b00010000  # Bit 4
+const BTN_RB    = 0b00100000  # Bit 5
+const BTN_START = 0b01000000  # Bit 6
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var controller_host = get_tree().get_current_scene().get_node("Controller")
@@ -33,7 +41,8 @@ func _ready():
 			(control as Control).visible = false
 
 func _physics_process(_delta):
-	if controller and controller.get_buttons() == 1:
+	var buttons = controller.get_buttons()
+	if controller and (buttons & BTN_A) != 0:
 		get_tree().change_scene_to_file("res://main.tscn")
 	
 func show_next_control():

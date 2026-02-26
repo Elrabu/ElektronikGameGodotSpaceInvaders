@@ -5,7 +5,7 @@
 		"Linux": "/dev/ttyACM1",
 		"NetBSD": "/dev/ttyACM1",
 		"OpenBSD": "/dev/ttyACM1",
-		"Windows": "COM3",
+		"Windows": "COM6",
 		"macOS": "/dev/tty.usbmodem"
 	},
 	"display_port": {
@@ -14,7 +14,7 @@
 		"Linux": "/dev/ttyACM0",
 		"NetBSD": "/dev/ttyACM0",
 		"OpenBSD": "/dev/ttyACM0",
-		"Windows": "COM4",
+		"Windows": "COM3",
 		"macOS": "/dev/tty.usbmodem2"
 	}
 }
